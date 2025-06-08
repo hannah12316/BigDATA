@@ -336,11 +336,11 @@ MySQL 服务端是允许多个客户端连接的，这意味着 MySQL 会出现�
 
 SQL标准提出了四种隔离级别来规避这些现象，隔离级别越高，效率越低
 
-- **读未提交**（read uncommitted）：一个事务未提交时，它所做变更不能被其他事务看到
+- **读未提交**（read uncommitted）：一个事务未提交时，它所做变更可能被其他事务看到
 - **读提交**（read committed）：一个事务提交后，它所做变更才能被其他事务看到
 - **可重复读**（repeatable read）：一个事务执行过程中看到的数据，一直跟这个事务启动时看到的数据一致，InnoDB默认隔离级别
 - **串行化**（serializable）：对记录加上读写锁，在多个事务对这条记录进行读写操作时，若发生读写冲突，后访问的事务必须等待前一个事务执行完成，才能继续执行
-
+- https://www.cnblogs.com/eddyz/p/16455113.html
 针对不同的隔离级别，并发事务可能发生的现象如下
 
 <img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202302151615902.png" style="zoom:50%;" />
